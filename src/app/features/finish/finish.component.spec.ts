@@ -117,7 +117,7 @@ describe('FinishComponent', () => {
 
   it('should calculate totalQuestions and correctAnswers properly', () => {
     expect(component.totalQuestions).toBe(6);
-    expect(component.correctAnswers).toBe(5);
+    expect(component.correctAnswersCount).toBe(5);
   });
 
   it('should calculate correct percentage', () => {

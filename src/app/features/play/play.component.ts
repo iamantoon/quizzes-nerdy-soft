@@ -126,6 +126,7 @@ export class PlayComponent implements OnInit {
 
   public cancelQuiz() {
     this.store.dispatch(setCurrentQuiz({quiz: null}));
+    this.answers = [];
     this.router.navigateByUrl('/');
   }
 

@@ -18,7 +18,6 @@ import { DetailsComponent } from "./details/details.component";
 export class FinishComponent {
   private router = inject(Router);
   public answerService = inject(AnswerService);
-  public correctAnswers = this.correctAnswersCount;
   public totalQuestions = this.answerService.currentQuizResults().length;
 
   get correctAnswersCount() {
@@ -30,7 +29,7 @@ export class FinishComponent {
   }
 
   public calculateCorrectPercentage(): number {
-    return this.totalQuestions ? Math.round((this.correctAnswers / this.totalQuestions) * 100) : 0;
+    return this.totalQuestions ? Math.round((this.correctAnswersCount / this.totalQuestions) * 100) : 0;
   }
 
   public formatTime(durationInSeconds: number): string {
