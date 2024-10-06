@@ -1,0 +1,12 @@
+<mat-card appearance="raised">
+  <mat-card-content class="mt-2">
+    <h2 class="text-sm text-center font-semibold uppercase">{{quiz().name}}</h2>
+    <p class="text-center">{{quiz().questions.length}} questions</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-stroked-button class="w-full" (click)="play()">
+      <mat-icon>play_arrow</mat-icon>
+      Play
+    </button>
+  </mat-card-actions>
+</mat-card>

@@ -1,0 +1,10 @@
+<div class="flex justify-between items-center mb-3">
+  <h6 class="font-semibold">All quizzes</h6>
+  <app-tooltip [text]="'Play a random quiz'">
+    <button mat-flat-button (click)="playRandomQuiz()">
+      I'm lucky
+    </button>
+  </app-tooltip>
+</div>
+
+<app-quizzes></app-quizzes>

@@ -1,0 +1,29 @@
+<ng-container *ngIf="currentQuiz$ | async as currentQuiz">
+  <ng-container *ngIf="currentQuiz.questions.length > 0 && questionWithAnswers">
+    <div class="quiz-container mx-auto max-w-screen-lg p-4 bg-blue-50 rounded-lg shadow-lg">
+      <div class="flex justify-end">
+        <button mat-icon-button class="text-blue-500" (click)="cancelQuiz()">
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+      <div class="text-center my-4">
+        <h3 class="text-xl font-bold">
+          Question {{ currentQuestionIndex + 1 }}/{{ currentQuiz.questions.length }}
+        </h3>
+      </div>
+      <app-question 
+        [question]="questionWithAnswers"
+        (setAnswer)="answer($event)"
+      ></app-question>
+      <div class="text-center mt-6">
+        <button 
+          [disabled]="!isAnswerProvided()"
+          mat-flat-button
+          (click)="nextQuestion()" 
+        >
+          {{ currentQuestionIndex + 1 === currentQuiz.questions.length ? 'Complete' : 'Next' }}
+        </button>
+      </div>
+    </div>
+  </ng-container>
+</ng-container>

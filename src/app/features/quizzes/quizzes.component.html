@@ -1,0 +1,8 @@
+<div 
+  class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-5 pb-3" 
+  *ngIf="quizzes$ | async as quizzes"
+>
+  @for (quiz of quizzes; track $index) {
+    <app-quiz-item [quiz]="quiz"></app-quiz-item>
+  }
+</div>

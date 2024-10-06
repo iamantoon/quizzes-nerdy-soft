@@ -1,0 +1,23 @@
+<div class="text-center flex flex-col items-center justify-center p-6">
+  <h1 class="text-2xl font-bold mb-4">
+    {{calculateCorrectPercentage() > 50 ? 'Bravo!' : 'You have a lot to learn.'}} You have scored
+  </h1>
+  <h2 class="text-7xl font-bold text-blue-500">{{correctAnswers}}/{{totalQuestions}}</h2>
+
+  <div class="mt-4 text-gray-600 mb-4">
+    <p class="text-pretty font-medium mb-1">Time Taken: {{formatTime(answerService.quizDuration())}}</p>
+    <p class="text-pretty font-medium mb-1">{{calculateCorrectPercentage()}}% of your answers are correct</p>
+    <p class="text-pretty font-medium mb-1">
+      On average, it took you {{answerService.quizDuration() / totalQuestions}} seconds to answer each question
+    </p>
+  </div>
+
+  <div class="mx-auto my-2">
+    <button mat-stroked-button (click)="playAgain()">
+      Choose another quiz
+    </button>
+  </div>
+
+  <app-details></app-details>
+
+</div>
